@@ -41,10 +41,6 @@ npm run start:dev
 
 # One-off run
 npm run start
-
-# Production build and run
-npm run build
-npm run start:prod
 ```
 
 Server listens on `http://localhost:3000` (or `PORT` from env).
