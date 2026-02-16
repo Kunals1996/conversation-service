@@ -1,6 +1,6 @@
 # Conversation Session Service
 
-Backend service for a Voice AI platform: manage conversation sessions and their events.
+Backend service for a Voice Owl AI platform: manage conversation sessions and their events.
 
 **Stack:** TypeScript, NestJS 11, MongoDB (Mongoose 9), class-validator/class-transformer.
 
