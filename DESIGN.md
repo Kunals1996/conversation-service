@@ -55,6 +55,15 @@ No code changes are required; the current implementation already follows this de
 - **Soft delete / audit log:** Not in the spec; sessions are completed, not deleted. Can be added later if needed.
 - **Webhooks or notifications:** Out of scope to keep the solution minimal and focused on the core API and data model.
 - **Constants/configuration files for strings:** Status values (`'initiated'`, `'active'`, `'completed'`, `'failed'`), event types (`'user_speech'`, `'bot_speech'`, `'system'`), and error messages are kept inline rather than extracted to a constants file. This avoids over-engineering for a small codebase where the values are used in few places and are self-documenting. If the codebase grows or these values need to be shared across multiple modules, extracting them would make sense.
+- **Session status lifecycle:** Currently implemented:
+  - `'initiated'` — Set when a session is created via `POST /sessions`.
+  - `'completed'` — Set when `POST /sessions/:sessionId/complete` is called.
+  
+  Not yet implemented (out of scope):
+  - `'active'` — Would mark when a session transitions to active conversation. Requires business logic to determine when to set this state (e.g., after first event, after first user speech, or on explicit API call). Not specified in the assignment.
+  - `'failed'` — Would mark when a session ends with an error or is explicitly failed. Requires a failure reason and API endpoint to trigger it. Not specified in the assignment.
+  
+  These states can be added in the future when clear triggers and business rules are defined.
 - **Language as enum:** The `language` field in session creation is accepted as a free-form string (e.g., `'en-US'`, `'fr-FR'`, `'es'`) rather than an enum of supported languages. This keeps the API flexible and avoids maintaining a hardcoded list that may need frequent updates as new languages are added. Validation ensures it's a non-empty string, but doesn't restrict to a predefined set. If language validation becomes critical (e.g., for downstream processing), an enum or allowlist can be added later.
 
 ---

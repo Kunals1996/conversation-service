@@ -4,7 +4,7 @@ import { SessionsController } from './sessions.controller';
 import { SessionsService } from './sessions.service';
 import { Session, SessionSchema } from './schemas/session.schema';
 import { Event, EventSchema } from './schemas/event.schema';
-import { SessionsRepository } from './sessions.repository';
+import { SessionsRepository } from './repositories/sessions.repository';
 import { EventsRepository } from './repositories/events.repository';
 
 @Module({

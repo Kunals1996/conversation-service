@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { getModelToken } from '@nestjs/mongoose';
 import { SessionsController } from '../../src/sessions/sessions.controller';
 import { SessionsService } from '../../src/sessions/sessions.service';
-import { SessionsRepository } from '../../src/sessions/sessions.repository';
+import { SessionsRepository } from '../../src/sessions/repositories/sessions.repository';
 import { EventsRepository } from '../../src/sessions/repositories/events.repository';
 import { Session } from '../../src/sessions/schemas/session.schema';
 import { Event } from '../../src/sessions/schemas/event.schema';

@@ -2,21 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Event, EventDocument } from '../schemas/event.schema';
-
-export interface CreateEventData {
-  sessionId: string;
-  eventId: string;
-  type: 'user_speech' | 'bot_speech' | 'system';
-  payload?: Record<string, unknown>;
-  timestamp: Date;
-}
-
-export interface EventsPage {
-  events: EventDocument[];
-  total: number;
-  limit: number;
-  offset: number;
-}
+import { CreateEventData } from '../interfaces/create-event-data.interface';
+import { EventsPage } from '../interfaces/events-page.interface';
 
 @Injectable()
 export class EventsRepository {

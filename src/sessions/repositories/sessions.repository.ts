@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Session, SessionDocument } from './schemas/session.schema';
-import { CreateSessionData } from './interfaces/create-session-data.interface';
+import { Session, SessionDocument } from '../schemas/session.schema';
+import { CreateSessionData } from '../interfaces/create-session-data.interface';
 
 @Injectable()
 export class SessionsRepository {
@@ -61,4 +61,3 @@ export class SessionsRepository {
     return this.completeSession(sessionId);
   }
 }
-

@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common';
 import { SessionDocument } from './schemas/session.schema';
 import { EventDocument } from './schemas/event.schema';
-import { SessionsRepository } from './sessions.repository';
+import { SessionsRepository } from './repositories/sessions.repository';
 import { EventsRepository } from './repositories/events.repository';
 import { CreateSessionDto } from './dto/create-session.dto';
 import { AddEventDto } from './dto/add-event.dto';
